@@ -37,6 +37,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
 
+      - run: yarn lint
+        if: ${{ steps.release.outputs.release_created }}
+
       - run: yarn build
         if: ${{ steps.release.outputs.release_created }}
 
