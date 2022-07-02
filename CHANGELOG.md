@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/joaocansi/react-xs-modal/compare/v1.0.1...v1.0.2) (2022-07-02)
+
+
+### Bug Fixes
+
+* react and react-dom added to devDependencies ([5ce61a0](https://github.com/joaocansi/react-xs-modal/commit/5ce61a09548212e6a823b79e0d8f9efa04d3059c))
+
 ## [1.0.1](https://github.com/joaocansi/react-xs-modal/compare/v1.0.0...v1.0.1) (2022-07-02)
 
 
