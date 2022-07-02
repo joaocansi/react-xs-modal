@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/joaocansi/react-xs-modal/compare/v1.0.2...v1.0.3) (2022-07-02)
+
+
+### Bug Fixes
+
+* release-please.yml updated to lint the code ([25f8e20](https://github.com/joaocansi/react-xs-modal/commit/25f8e2002649e95dc2cd7af77359ccd22c89b9c9))
+
 ## [1.0.2](https://github.com/joaocansi/react-xs-modal/compare/v1.0.1...v1.0.2) (2022-07-02)
 
 
