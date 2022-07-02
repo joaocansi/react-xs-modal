@@ -1,15 +1,11 @@
-import React from "react";
-import { useModal } from "./useModal";
+import React from 'react'
+import { useModal } from './useModal'
 
-export const ModalRoot = () => {
+export function ModalRoot() {
   const {
     isModalVisible,
     modal: { Component, options },
-  } = useModal();
+  } = useModal()
 
-  return (
-    <div id="modal-root">
-      {isModalVisible && <Component {...options.props} />}
-    </div>
-  );
-};
+  return <div id='modal-root'>{isModalVisible && <Component {...options.props} />}</div>
+}

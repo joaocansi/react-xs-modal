@@ -1,5 +1,5 @@
-import "./styles/index.scss";
+import './styles/index.scss'
 
-export * from "./ModalRoot";
-export * from "./asModal";
-export * from "./useModal";
+export * from './ModalRoot'
+export * from './asModal'
+export * from './useModal'

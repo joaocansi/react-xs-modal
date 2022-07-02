@@ -1,49 +1,40 @@
-import React, {
-  ComponentType,
-  createContext,
-  ReactNode,
-  useContext,
-  useState,
-} from "react";
-import { ModalRoot } from "./ModalRoot";
-
-interface ModalProps {
-  Component: ComponentType<any>;
-  options: ModalOptions;
-}
+import React, { ComponentType, createContext, ReactNode, useContext, useState } from 'react'
+import { ModalRoot } from './ModalRoot'
 
 interface ModalOptions {
-  props?: any;
+  props?: any
+}
+
+interface ModalProps {
+  Component: any
+  options: ModalOptions
 }
 
 interface ModalContextProps {
-  isModalVisible: boolean;
-  modal: ModalProps;
+  isModalVisible: boolean
+  modal: ModalProps
 
-  displayModal: (Component: ComponentType<any>, options?: ModalOptions) => void;
-  hideModal: () => void;
+  displayModal: (Component: ComponentType<any>, options?: ModalOptions) => void
+  hideModal: () => void
 }
 
 interface ModalProviderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
-export const ModalContext = createContext({} as ModalContextProps);
-export const ModalProvider = ({ children }: ModalProviderProps) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modal, setModal] = useState<ModalProps>({} as ModalProps);
+export const ModalContext = createContext({} as ModalContextProps)
+export function ModalProvider({ children }: ModalProviderProps) {
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [modal, setModal] = useState<ModalProps>({} as ModalProps)
 
-  const displayModal = (
-    Component: ComponentType<any>,
-    options: ModalOptions = {}
-  ) => {
-    setModal({ Component, options });
-    setIsModalVisible(true);
-  };
+  const displayModal = (Component: ComponentType<any>, options: ModalOptions = {}) => {
+    setModal({ Component, options })
+    setIsModalVisible(true)
+  }
   const hideModal = () => {
-    setModal({} as ModalProps);
-    setIsModalVisible(false);
-  };
+    setModal({} as ModalProps)
+    setIsModalVisible(false)
+  }
 
   return (
     <ModalContext.Provider
@@ -57,6 +48,6 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
       {children}
       <ModalRoot />
     </ModalContext.Provider>
-  );
-};
-export const useModal = () => useContext(ModalContext);
+  )
+}
+export const useModal = () => useContext(ModalContext)
