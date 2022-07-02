@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/joaocansi/react-xs-modal/compare/v1.0.0...v1.0.1) (2022-07-02)
+
+
+### Bug Fixes
+
+* release-please package-name changed ([93dd3bb](https://github.com/joaocansi/react-xs-modal/commit/93dd3bb3f88b1aa176b856f0a0e5cd470e1857b9))
+
 ## 1.0.0 (2022-07-02)
 
 
