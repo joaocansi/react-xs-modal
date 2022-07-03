@@ -1,4 +1,4 @@
-import React, { ComponentType, CSSProperties, useEffect } from 'react'
+import React, { ComponentType, CSSProperties, useEffect, useRef } from 'react'
 import { useModal } from './useModal'
 
 interface AsModalOptionsProps {
@@ -7,17 +7,20 @@ interface AsModalOptionsProps {
     contentStyle?: CSSProperties
   }
   closeOnClick?: boolean
+  allowScroll?: boolean
 }
 
 export function asModal<T>(Component: ComponentType<T>, options: AsModalOptionsProps) {
   return function (props: T) {
     const { hideModal } = useModal()
+    const contentRef = useRef<HTMLDivElement>(null)
 
     const handleOnClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement
-      const modalOverlay = document.getElementById('modal-overlay')
 
-      if (target.contains(modalOverlay)) hideModal()
+      if (contentRef.current && !contentRef.current.contains(target)) {
+        hideModal()
+      }
     }
 
     useEffect(() => {
@@ -34,7 +37,7 @@ export function asModal<T>(Component: ComponentType<T>, options: AsModalOptionsP
 
     return (
       <div id='modal-overlay' style={options.style?.overlayStyle}>
-        <div id='modal-content' style={options.style?.contentStyle}>
+        <div ref={contentRef} id='modal-content' style={options.style?.contentStyle}>
           <Component {...props} />
         </div>
       </div>
