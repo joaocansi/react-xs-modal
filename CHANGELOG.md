@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/joaocansi/react-xs-modal/compare/v1.0.3...v1.0.4) (2022-07-03)
+
+
+### Bug Fixes
+
+* handleOnClickOutside recreated ([1ee4c61](https://github.com/joaocansi/react-xs-modal/commit/1ee4c6109f4cb9dd97e21f092fd2b873278dee22))
+
 ## [1.0.3](https://github.com/joaocansi/react-xs-modal/compare/v1.0.2...v1.0.3) (2022-07-02)
 
 
