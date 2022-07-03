@@ -17,8 +17,9 @@ export function asModal<T>(Component: ComponentType<T>, options: AsModalOptionsP
 
     const handleOnClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement
+      const overlay = document.getElementById('modal-overlay')
 
-      if (contentRef.current && !contentRef.current.contains(target)) {
+      if (contentRef.current && !contentRef.current.contains(target) && overlay?.contains(target)) {
         hideModal()
       }
     }
